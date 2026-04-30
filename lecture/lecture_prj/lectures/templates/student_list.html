@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>학생 목록</h2>
+    {% for student in students %}
+    <p>{{student.student_id}}  {{student.name}}</p>
+    <p> - 수강강의: <Br> {{student.lecture.code}} {{student.lecture.title}}</p>
+    {% empty %} 등록된 교수가 없습니다. {% endfor %}
+
+</body>
+</html>
