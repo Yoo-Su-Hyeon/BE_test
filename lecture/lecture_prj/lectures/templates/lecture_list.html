@@ -9,6 +9,9 @@
     <h2>강의 목록</h2>
     {% for lecture in lectures %}
     <p>- {{lecture.code}}  {{lecture.title}} - {{lecture.pro_name}}</p>
+        {% for student in lecture.students.all %}
+            <p> 수강생 목록 : <br> {{student.student_id}} - {{student.name}} </p>
+            {% empty %} 수강하는 학생이 없습니다. {%endfor%}
     {% empty %} 등록된 강의가 없습니다. {% endfor %}
 </body>
 </html>
